@@ -1,6 +1,5 @@
 # Stage 1: Build with Node.js and .NET
-FROM mcr.microsoft.com/dotnet/runtime:8.0-bullseye-slim as runtime
-
+FROM mcr.microsoft.com/dotnet/runtime:8.0-bookworm-slim as runtime
 # Install Node.js
 RUN apt-get update && \
     apt-get install -y curl && \
