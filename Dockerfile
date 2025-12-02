@@ -1,5 +1,6 @@
 # Stage 1: Build with Node.js and .NET
 FROM mcr.microsoft.com/dotnet/runtime:8.0-bookworm-slim as runtime
+
 # Install Node.js
 RUN apt-get update && \
     apt-get install -y curl && \
@@ -9,7 +10,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Stage 2: Final image
-FROM mcr.microsoft.com/dotnet/runtime:8.0-bullseye-slim
+FROM mcr.microsoft.com/dotnet/runtime:8.0-bookworm-slim
 
 # Copy Node.js from build stage
 COPY --from=runtime /usr/lib /usr/lib
