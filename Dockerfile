@@ -1,5 +1,5 @@
 # Stage 1: Build with Node.js and .NET
-FROM mcr.microsoft.com/dotnet/runtime:8.0-bookworm-slim as runtime
+FROM mcr.microsoft.com/dotnet/sdk:8.0-bookworm as build
 
 # Install Node.js
 RUN apt-get update && \
@@ -9,17 +9,20 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Verify installations
+RUN dotnet --version && node --version && npm --version
+
 # Stage 2: Final image
 FROM mcr.microsoft.com/dotnet/runtime:8.0-bookworm-slim
 
 # Copy Node.js from build stage
-COPY --from=runtime /usr/lib /usr/lib
-COPY --from=runtime /usr/local /usr/local
-COPY --from=runtime /usr/bin/node* /usr/bin/
-COPY --from=runtime /usr/bin/npm /usr/bin/
+COPY --from=build /usr/lib /usr/lib
+COPY --from=build /usr/local /usr/local
+COPY --from=build /usr/bin/node* /usr/bin/
+COPY --from=build /usr/bin/npm /usr/bin/
 
-# Verify installations
-RUN dotnet --version && node --version && npm --version
+# Verify Node.js installation in runtime image
+RUN node --version && npm --version
 
 # Set working directory
 WORKDIR /app
