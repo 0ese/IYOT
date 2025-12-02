@@ -1,5 +1,5 @@
 # Stage 1: Build with Node.js and .NET
-FROM mcr.microsoft.com/dotnet/sdk:8.0-bookworm as build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 as build
 
 # Install Node.js
 RUN apt-get update && \
