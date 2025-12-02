@@ -1,0 +1,37 @@
+2025-12-02T06:27:22.434277503Z ==> Cloning from https://github.com/0ese/yubenhita
+2025-12-02T06:27:23.600842602Z ==> Checking out commit 90895210c5c0079bd92ffd578e1449f911a7a4cf in branch main
+2025-12-02T06:27:30.419475851Z ==> Using Node.js version 22.16.0 (default)
+2025-12-02T06:27:30.445101581Z ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+2025-12-02T06:27:32.857405197Z ==> Running build command 'yarn install; yarn build'...
+2025-12-02T06:27:33.372386504Z yarn install v1.22.22
+2025-12-02T06:27:33.390506863Z info No lockfile found.
+2025-12-02T06:27:33.395274954Z [1/4] Resolving packages...
+2025-12-02T06:27:41.834233082Z warning drizzle-kit > @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+2025-12-02T06:27:41.873047647Z warning drizzle-kit > @esbuild-kit/esm-loader > @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+2025-12-02T06:27:42.887493165Z [2/4] Fetching packages...
+2025-12-02T06:28:17.733144013Z [3/4] Linking dependencies...
+2025-12-02T06:28:17.756105065Z warning Workspaces can only be enabled in private projects.
+2025-12-02T06:28:17.761692487Z warning Workspaces can only be enabled in private projects.
+2025-12-02T06:28:17.761706497Z warning Workspaces can only be enabled in private projects.
+2025-12-02T06:28:17.771081665Z warning Workspaces can only be enabled in private projects.
+2025-12-02T06:28:17.771097876Z warning Workspaces can only be enabled in private projects.
+2025-12-02T06:28:17.771104186Z warning Workspaces can only be enabled in private projects.
+2025-12-02T06:28:17.771157407Z warning Workspaces can only be enabled in private projects.
+2025-12-02T06:29:01.486753399Z [4/4] Building fresh packages...
+2025-12-02T06:29:01.857727571Z success Saved lockfile.
+2025-12-02T06:29:01.86321694Z Done in 88.50s.
+2025-12-02T06:29:02.159946058Z yarn run v1.22.22
+2025-12-02T06:29:02.189298873Z $ vite build && esbuild server/index-prod.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js
+2025-12-02T06:29:02.455528557Z vite v5.4.21 building for production...
+2025-12-02T06:29:02.516490773Z ✓ 0 modules transformed.
+2025-12-02T06:29:02.518147445Z x Build failed in 23ms
+2025-12-02T06:29:02.518195037Z error during build:
+2025-12-02T06:29:02.518208277Z Could not resolve entry module "index.html".
+2025-12-02T06:29:02.518214127Z     at getRollupError (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/parseAst.js:401:41)
+2025-12-02T06:29:02.518218497Z     at error (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/parseAst.js:397:42)
+2025-12-02T06:29:02.518223297Z     at ModuleLoader.loadEntryModule (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:21611:20)
+2025-12-02T06:29:02.518227387Z     at async Promise.all (index 0)
+2025-12-02T06:29:02.538181664Z info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+2025-12-02T06:29:02.538250835Z error Command failed with exit code 1.
+2025-12-02T06:29:02.605644615Z ==> Build failed 😞
+2025-12-02T06:29:02.605806039Z ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys

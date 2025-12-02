@@ -1,0 +1,22 @@
+{
+  "name": "moonsec-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Discord bot for deobfuscating Moonsec V3 Lua files",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "tsx server/bot-only.ts",
+    "start": "tsx server/bot-only.ts"
+  },
+  "dependencies": {
+    "@discordjs/rest": "^2.6.0",
+    "axios": "^1.13.2",
+    "discord.js": "^14.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.11",
+    "tsx": "^4.20.5"
+  }
+}

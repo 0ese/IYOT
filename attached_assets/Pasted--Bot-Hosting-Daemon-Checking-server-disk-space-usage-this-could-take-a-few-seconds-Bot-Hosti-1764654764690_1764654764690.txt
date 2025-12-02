@@ -1,0 +1,49 @@
+[Bot-Hosting Daemon]: Checking server disk space usage, this could take a few seconds...
+[Bot-Hosting Daemon]: Updating process configuration files...
+[Bot-Hosting Daemon]: Ensuring file permissions are set correctly, this could take a few seconds...
+container@pterodactyl~ Server marked as starting...
+[Bot-Hosting Daemon]: Pulling Docker container image, this could take a few minutes to complete...
+[Bot-Hosting Daemon]: Finished pulling Docker container image
+v22.21.1
+:/home/container$ if [[ -d .git ]] && [[ ${AUTO_UPDATE} == "1" ]]; then git pull; fi; if [[ ! -z ${NODE_PACKAGES} ]]; then /usr/local/bin/npm install ${NODE_PACKAGES}; fi; if [[ ! -z ${UNNODE_PACKAGES} ]]; then /usr/local/bin/npm uninstall ${UNNODE_PACKAGES}; fi; if [ -f /home/container/package.json ]; then /usr/local/bin/npm install; fi; if [[ ! -z "${START_BASH_FILE}" ]]; then bash ${START_BASH_FILE}; else /usr/local/bin/node /home/container/${BOT_JS_FILE}; fi;
+
+added 149 packages, and audited 150 packages in 34s
+
+24 packages are looking for funding
+  run `npm fund` for details
+
+1 low severity vulnerability
+To address all issues, run:
+  npm audit fix
+Run `npm audit` for details.
+Failed to load dist/index.js, trying tsx... Cannot find module '/home/container/dist/index.js' imported from /home/container/index.js
+🚀 Starting Discord bot...
+⚠️ No DATABASE_URL provided - using in-memory storage
+Registering global slash commands...
+Error registering commands: DiscordAPIError[0]: 401: Unauthorized
+    at handleErrors (/home/container/node_modules/@discordjs/rest/src/lib/handlers/Shared.ts:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async SequentialHandler.runRequest (/home/container/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:417:20)
+    at async SequentialHandler.queueRequest (/home/container/node_modules/@discordjs/rest/src/lib/handlers/SequentialHandler.ts:169:11)
+    at async _REST.request (/home/container/node_modules/@discordjs/rest/src/lib/REST.ts:210:20)
+    at async registerCommands (/home/container/server/discord-bot.ts:216:5)
+    at async startBot (/home/container/server/discord-bot.ts:272:3)
+    at async <anonymous> (/home/container/server/index-prod.ts:29:3) {
+  requestBody: { files: undefined, json: [ [Object], [Object] ] },
+  rawError: { message: '401: Unauthorized', code: 0 },
+  code: 0,
+  status: 401,
+  method: 'PUT',
+  url: 'https://discord.com/api/v10/applications/1445009388883677184/commands'
+}
+/home/container/server/index-prod.ts:13
+    throw new Error(
+          ^
+Error: Could not find the build directory: /home/container/server/public, make sure to build the client first
+    at serveStatic (/home/container/server/index-prod.ts:13:11)
+    at runApp (/home/container/server/app.ts:82:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/container/server/index-prod.ts:32:3)
+Node.js v22.21.1
+
+container@pterodactyl~ Server marked as offline...
